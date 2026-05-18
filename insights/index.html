@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Insights &amp; Resources — IT for Business Leaders | Stratum</title>
+  <meta name="description" content="Practical, plain-language insights on managed IT, cybersecurity, and business systems for business leaders across the Lower Mainland.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#2C2B28">
+  <meta name="geo.region" content="CA-BC">
+  <link rel="canonical" href="https://stratumtech.ca/insights">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stratum">
+  <meta property="og:title" content="Insights &amp; Resources — IT for Business Leaders | Stratum">
+  <meta property="og:description" content="Practical insights on managed IT, cybersecurity, and business systems for business leaders.">
+  <meta property="og:url" content="https://stratumtech.ca/insights">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:image" content="https://stratumtech.ca/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Insights &amp; Resources | Stratum">
+  <meta name="twitter:description" content="Practical insights on managed IT, cybersecurity, and business systems.">
+  <meta name="twitter:image" content="https://stratumtech.ca/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://stratumtech.ca/" },
+          { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://stratumtech.ca/insights" }
+        ]
+      },
+      {
+        "@type": "Blog",
+        "@id": "https://stratumtech.ca/insights#blog",
+        "url": "https://stratumtech.ca/insights",
+        "name": "I.T. Insights for Business Leaders",
+        "description": "Practical, plain-language content on managed IT, cybersecurity, and business systems for business leaders.",
+        "publisher": { "@id": "https://stratumtech.ca/#organization" },
+        "inLanguage": "en-CA"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/design-system.css">
+
+  <style>
+    .insights-filter {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .filter-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-right: 4px;
+    }
+    .filter-btn {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1.5px solid var(--color-border);
+      background: transparent;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: border-color .12s, color .12s, background .12s;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: var(--color-accent-lt);
+    }
+    .insight-grid--large {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .insight-card--featured {
+      grid-column: span 2;
+      flex-direction: row;
+      gap: 28px;
+      align-items: flex-start;
+    }
+    .insight-card--featured .insight-card-visual {
+      width: 280px;
+      flex-shrink: 0;
+      border-radius: var(--radius);
+      height: 180px;
+    }
+    .insight-card--featured h3 { font-size: 22px; }
+    .insight-card-body { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    @media (max-width: 900px) {
+      .insight-grid--large { grid-template-columns: 1fr; }
+      .insight-card--featured { flex-direction: column; }
+      .insight-card--featured { grid-column: span 1; }
+      .insight-card--featured .insight-card-visual { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar"><div class="navbar-inner">
+    <a href="/" class="navbar-logo" aria-label="Stratum — Home"><svg width="544" height="72" viewBox="0 0 544 72" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="navLogoTitle"><title id="navLogoTitle">Stratum</title><path d="M22.5 0C10.0736 0 0 10.0736 0 22.5C0 34.9264 10.0736 45 22.5 45H57.5C59.9852 45 62 47.0148 62 49.5C62 51.9852 59.9852 54 57.5 54H2.5V72H57.5C69.9264 72 80 61.9264 80 49.5C80 37.0736 69.9264 27 57.5 27H22.5C20.0148 27 18 24.9852 18 22.5C18 20.0148 20.0148 18 22.5 18H77.5V0H22.5Z" fill="black"/><path fill-rule="evenodd" clip-rule="evenodd" d="M161.5 0V72H179.5V48H199.5L211.5 72H231.5L218.028 45.0554C225.461 40.977 230.5 33.077 230.5 24C230.5 10.7452 219.755 0 206.5 0H161.5ZM212.5 24C212.5 20.6863 209.814 18 206.5 18H179.5V30H206.5C209.814 30 212.5 27.3137 212.5 24Z" fill="black"/><path d="M83.5 0V18H122.5L110.5 28V72H128.5V18H155.5V0H83.5Z" fill="black"/><path d="M248.5 54L265.5 20L291.5 72H311.5L275.5 0H255.5L228.5 54L237.5 72H285.5L276.5 54H248.5Z" fill="black"/><path d="M335.5 18H362.5V0H290.5V18H329.5L317.5 28V72H335.5V18Z" fill="black"/><path d="M445.5 0V48C445.5 61.2548 434.755 72 421.5 72H392.5C379.245 72 368.5 61.2548 368.5 48V0H386.5V48C386.5 51.3137 389.186 54 392.5 54H421.5C424.814 54 427.5 51.3137 427.5 48V0H445.5Z" fill="black"/><path d="M469.5 36L487.5 72H507.5L525.5 36V72H543.5V0H523.5L497.5 52L471.5 0H451.5V72H469.5V36Z" fill="black"/></svg></a>
+    <ul class="navbar-nav">
+      <li class="has-dropdown" id="services-nav-item"><a href="/services" id="services-nav-trigger" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="services-dropdown">Services<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="4 6 8 10 12 6"/></svg></a>
+        <div class="nav-dropdown" id="services-dropdown"><div class="nav-dropdown-inner"><a href="/services/managed-it" class="nav-dropdown-card" aria-label="Managed IT services"><span class="nav-dropdown-card-num">01 — Managed IT</span><span class="nav-dropdown-card-title">Structured support that keeps the environment stable.</span><span class="nav-dropdown-card-desc">Help desk, device management, monitoring, patching, network, and vendor coordination.</span><div class="nav-dropdown-card-tags"><span class="nav-dropdown-card-tag">Help desk</span><span class="nav-dropdown-card-tag">Devices</span><span class="nav-dropdown-card-tag">Network</span><span class="nav-dropdown-card-tag">Monitoring</span></div></a><a href="/services/cybersecurity" class="nav-dropdown-card" aria-label="Cybersecurity services"><span class="nav-dropdown-card-num">02 — Cybersecurity</span><span class="nav-dropdown-card-title">Layered protection and real recovery readiness.</span><span class="nav-dropdown-card-desc">Endpoint, identity, email, backup, monitoring, and compliance support.</span><div class="nav-dropdown-card-tags"><span class="nav-dropdown-card-tag">Endpoint</span><span class="nav-dropdown-card-tag">Identity</span><span class="nav-dropdown-card-tag">Backup readiness</span></div></a><a href="/services/business-systems" class="nav-dropdown-card" aria-label="Business Systems — ERP, CRM, automation"><span class="nav-dropdown-card-num">03 — Business Systems</span><span class="nav-dropdown-card-title">Systems aligned with how the business operates.</span><span class="nav-dropdown-card-desc">ERP, CRM, Microsoft 365, automation, AI enablement, and projects.</span><div class="nav-dropdown-card-tags"><span class="nav-dropdown-card-tag">ERP &amp; CRM</span><span class="nav-dropdown-card-tag">Microsoft 365</span><span class="nav-dropdown-card-tag">Automation</span></div></a></div><div class="nav-dropdown-footer"><a href="/services">View all services →</a></div></div>
+      </li>
+      <li class="has-dropdown" id="industries-nav-item"><a href="/industries" id="industries-nav-trigger" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="industries-dropdown">Industries<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="4 6 8 10 12 6"/></svg></a>
+        <div class="nav-dropdown" id="industries-dropdown"><div class="nav-dropdown-inner nav-dropdown-inner--industries"><a href="/industries/automotive-dealerships" class="nav-dropdown-industry"><div class="nav-dropdown-industry-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 17H3a2 2 0 01-2-2v-5l2.5-5h13L19 10v5a2 2 0 01-2 2h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></div><strong>Automotive Dealerships</strong><span>Multi-department, DMS coordination, uptime.</span></a><a href="/industries/medical-dental" class="nav-dropdown-industry"><div class="nav-dropdown-industry-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div><strong>Medical &amp; Dental</strong><span>Uptime, patient data, compliance.</span></a><a href="/industries/law-firms" class="nav-dropdown-industry"><div class="nav-dropdown-industry-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div><strong>Law Firms &amp; Legal</strong><span>Documents, continuity, trust.</span></a><a href="/industries/construction-aec" class="nav-dropdown-industry"><div class="nav-dropdown-industry-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><strong>Construction &amp; AEC</strong><span>Office, site, and field.</span></a><a href="/industries/manufacturing" class="nav-dropdown-industry"><div class="nav-dropdown-industry-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><strong>Manufacturing</strong><span>Multi-site, lifecycle, OT-aware.</span></a></div><div class="nav-dropdown-footer"><a href="/industries">View all industries →</a></div></div>
+      </li>
+      <li><a href="/why-stratum">Why Stratum</a></li>
+      <li><a href="/insights">Insights</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <div class="navbar-actions"><a href="tel:+18552000076" class="btn btn-primary">Talk to a Human</a></div>
+  </div></nav>
+
+  <main id="main-content">
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a><span class="breadcrumb-sep">›</span>
+            <span>Insights</span>
+          </nav>
+          <div class="wf-label">Insights &amp; Resources</div>
+          <h1>I.T. Insights for Business Leaders</h1>
+          <p>Practical, plain-language content on managed IT, cybersecurity, and business systems — written for the people running the business, not the IT team.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="insights-filter">
+          <span class="filter-label">Filter:</span>
+          <button class="filter-btn active">All</button>
+          <button class="filter-btn">Managed IT</button>
+          <button class="filter-btn">Cybersecurity</button>
+          <button class="filter-btn">Business Systems</button>
+          <button class="filter-btn">Industries</button>
+        </div>
+
+        <div class="insight-grid insight-grid--large">
+
+          <!-- Featured post -->
+          <a href="/insights/what-is-managed-it" class="insight-card insight-card--featured">
+            <div class="wf-placeholder insight-card-visual">Image placeholder</div>
+            <div class="insight-card-body">
+              <div class="insight-card-meta">
+                <span class="tag">Managed IT</span>
+                <span class="insight-date">May 2026</span>
+              </div>
+              <h3>What Does "Managed IT" Actually Mean for a Growing Business?</h3>
+              <p>Most businesses use the term without a clear definition. Here's how to think about it — and what it should look like in practice for an organization that is too complex for break-fix and too small to justify a full internal IT team.</p>
+              <span class="insight-card-link">Read more →</span>
+            </div>
+          </a>
+
+          <a href="/insights/cyber-insurance-questionnaires" class="insight-card">
+            <div class="insight-card-meta">
+              <span class="tag">Cybersecurity</span>
+              <span class="insight-date">May 2026</span>
+            </div>
+            <h3>Why Cyber Insurance Questionnaires Are Getting Harder to Answer</h3>
+            <p>Insurers are asking more detailed security questions — and the answers affect your premiums, coverage, and credibility. Here's what they're looking for.</p>
+            <span class="insight-card-link">Read more →</span>
+          </a>
+
+          <a href="/insights/erp-timing" class="insight-card">
+            <div class="insight-card-meta">
+              <span class="tag">Business Systems</span>
+              <span class="insight-date">April 2026</span>
+            </div>
+            <h3>When Is the Right Time to Implement an ERP?</h3>
+            <p>The answer is rarely "when you're big enough." Here's how to recognize the operational signals that actually indicate readiness — before the pain becomes unavoidable.</p>
+            <span class="insight-card-link">Read more →</span>
+          </a>
+
+          <a href="/insights/backup-vs-recovery" class="insight-card">
+            <div class="insight-card-meta">
+              <span class="tag">Cybersecurity</span>
+              <span class="insight-date">April 2026</span>
+            </div>
+            <h3>Backup and Recovery Are Not the Same Thing</h3>
+            <p>Most businesses have backups. Fewer can actually recover. The difference matters most at the worst possible moment — here's how to close the gap.</p>
+            <span class="insight-card-link">Read more →</span>
+          </a>
+
+          <a href="/insights/it-for-dealerships" class="insight-card">
+            <div class="insight-card-meta">
+              <span class="tag">Automotive</span>
+              <span class="insight-date">March 2026</span>
+            </div>
+            <h3>IT in an Automotive Dealership Is Not Like IT Anywhere Else</h3>
+            <p>DMS systems, OEM portals, service lane uptime, showroom Wi-Fi, finance office security — dealership IT has its own complexity. Here's how to think about it.</p>
+            <span class="insight-card-link">Read more →</span>
+          </a>
+
+          <a href="/insights/missing-middle" class="insight-card">
+            <div class="insight-card-meta">
+              <span class="tag">Strategy</span>
+              <span class="insight-date">March 2026</span>
+            </div>
+            <h3>The Structural Missing Middle: Why So Many Businesses Get IT Wrong</h3>
+            <p>Too complex for break-fix. Too small for a full internal team. Most growing businesses are stuck in the gap — and most IT providers don't actually serve it.</p>
+            <span class="insight-card-link">Read more →</span>
+          </a>
+
+        </div>
+
+        <div class="wf-note"><strong>Wireframe note:</strong> Blog posts are placeholder content. CMS integration (Webflow CMS, Contentful, or static generation) to be configured before launch. Filter buttons require JS or CMS filtering logic.</div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2>Have a question that isn't answered here?</h2>
+          <p>Talk to us directly. No pitch, no jargon — just a straight conversation about your situation.</p>
+        </div>
+        <a href="/contact" class="btn btn-primary">Talk With Stratum →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer"><div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo" aria-label="Stratum — Home"><svg width="544" height="72" viewBox="0 0 544 72" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="footerLogoTitle"><title id="footerLogoTitle">Stratum</title><path d="M22.5 0C10.0736 0 0 10.0736 0 22.5C0 34.9264 10.0736 45 22.5 45H57.5C59.9852 45 62 47.0148 62 49.5C62 51.9852 59.9852 54 57.5 54H2.5V72H57.5C69.9264 72 80 61.9264 80 49.5C80 37.0736 69.9264 27 57.5 27H22.5C20.0148 27 18 24.9852 18 22.5C18 20.0148 20.0148 18 22.5 18H77.5V0H22.5Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M161.5 0V72H179.5V48H199.5L211.5 72H231.5L218.028 45.0554C225.461 40.977 230.5 33.077 230.5 24C230.5 10.7452 219.755 0 206.5 0H161.5ZM212.5 24C212.5 20.6863 209.814 18 206.5 18H179.5V30H206.5C209.814 30 212.5 27.3137 212.5 24Z" fill="white"/><path d="M83.5 0V18H122.5L110.5 28V72H128.5V18H155.5V0H83.5Z" fill="white"/><path d="M248.5 54L265.5 20L291.5 72H311.5L275.5 0H255.5L228.5 54L237.5 72H285.5L276.5 54H248.5Z" fill="white"/><path d="M335.5 18H362.5V0H290.5V18H329.5L317.5 28V72H335.5V18Z" fill="white"/><path d="M445.5 0V48C445.5 61.2548 434.755 72 421.5 72H392.5C379.245 72 368.5 61.2548 368.5 48V0H386.5V48C386.5 51.3137 389.186 54 392.5 54H421.5C424.814 54 427.5 51.3137 427.5 48V0H445.5Z" fill="white"/><path d="M469.5 36L487.5 72H507.5L525.5 36V72H543.5V0H523.5L497.5 52L471.5 0H451.5V72H469.5V36Z" fill="white"/></svg></a>
+        <p>Structure, security, stability, simplicity, and stewardship for growing organizations.</p>
+        <address style="font-style: normal; margin-top: 16px; font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.6;">Serving Lower Mainland, British Columbia<br><a href="tel:+18552000076" style="color: rgba(255,255,255,.85); text-decoration: none;">1 (855) 200-0076</a></address>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="/services/managed-it">Managed IT</a></li><li><a href="/services/cybersecurity">Cybersecurity</a></li><li><a href="/services/business-systems">Business Systems</a></li><li><a href="/services">View all services →</a></li></ul></div>
+      <div class="footer-col"><h4>Industries</h4><ul><li><a href="/industries/automotive-dealerships">Automotive Dealerships</a></li><li><a href="/industries/medical-dental">Medical &amp; Dental</a></li><li><a href="/industries/law-firms">Law Firms</a></li><li><a href="/industries/construction-aec">Construction &amp; AEC</a></li><li><a href="/industries/manufacturing">Manufacturing</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="/why-stratum">Why Stratum</a></li><li><a href="/insights">Insights</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Stratum Technology. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a></div></div>
+  </div></footer>
+
+  <script>
+    document.querySelectorAll('.has-dropdown').forEach(item => {
+      const trigger = item.querySelector('[aria-haspopup]');
+      if (!trigger) return;
+      const setOpen = (open) => { item.classList.toggle('open', open); trigger.setAttribute('aria-expanded', String(open)); };
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.has-dropdown.open').forEach(o => { o.classList.remove('open'); o.querySelector('[aria-haspopup]')?.setAttribute('aria-expanded', 'false'); });
+        setOpen(!isOpen);
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.has-dropdown')) document.querySelectorAll('.has-dropdown.open').forEach(o => { o.classList.remove('open'); o.querySelector('[aria-haspopup]')?.setAttribute('aria-expanded', 'false'); });
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') document.querySelectorAll('.has-dropdown.open').forEach(o => { o.classList.remove('open'); o.querySelector('[aria-haspopup]')?.setAttribute('aria-expanded', 'false'); });
+    });
+  </script>
+</body>
+</html>
