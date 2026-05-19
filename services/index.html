@@ -96,6 +96,13 @@
       margin-top: 4px;
     }
     @media (max-width: 900px) { .ind-strip { grid-template-columns: 1fr 1fr; } }
+
+    #service-catalog-section .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 </head>
 <body>
@@ -194,54 +201,176 @@
       </div>
     </section>
 
-    <!-- 5S LENS — summary by service area -->
-    <section id="5s-case" class="band">
+    <!-- Service catalog — browse and search -->
+    <section id="service-catalog-section" class="band">
       <div class="container">
         <div class="section-header">
-          <div class="wf-label">The 5S case</div>
-          <h4>What each service delivers</h4>
-          <h2>Every service area filtered through the same five commitments.</h2>
-          <p>Structure, Security, Stability, Simplicity, and Stewardship are not just brand language — they describe what each service area actually does for a business.</p>
+          <div class="wf-label">Service catalog</div>
+          <h4>Browse by category</h4>
+          <h2>Every capability Stratum covers, in one place.</h2>
+          <p>Filter by category or search below. Each item explains what it delivers for your business — outcomes and accountability, not a list of tools.</p>
         </div>
-        <div class="lens-table-wrap">
-          <table class="lens-table">
-            <thead>
-              <tr>
-                <th>Service area</th>
-                <th>Structure</th>
-                <th>Security</th>
-                <th>Stability</th>
-                <th>Simplicity</th>
-                <th>Stewardship</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Managed IT</td>
-                <td>Tickets, dispatch, escalation, and accountability.</td>
-                <td>Controlled support and access channels.</td>
-                <td>Less downtime and fewer recurring issues.</td>
-                <td>One place to go when something needs to happen.</td>
-                <td>Ongoing care for the environment over time.</td>
-              </tr>
-              <tr>
-                <td>Cybersecurity</td>
-                <td>A defined security framework, not random tools.</td>
-                <td>MFA, EDR, email, backup, monitoring, and response.</td>
-                <td>Less business disruption from compromise or data loss.</td>
-                <td>Cyber risk translated into plain-language priorities.</td>
-                <td>Protects business, reputation, and insurance position.</td>
-              </tr>
-              <tr>
-                <td>Business Systems</td>
-                <td>Workflows, data, and handoffs structured around the business.</td>
-                <td>New systems implemented with proper access and controls.</td>
-                <td>Reduces dependence on spreadsheets and tribal knowledge.</td>
-                <td>Easier for staff and leadership to operate day-to-day.</td>
-                <td>Modernization with long-term value in mind.</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="service-catalog" id="service-catalog">
+          <div class="service-catalog__filters" role="group" aria-label="Filter by service category">
+            <button type="button" class="service-catalog__filter" data-filter="managed-it" aria-pressed="false">Managed IT</button>
+            <button type="button" class="service-catalog__filter" data-filter="cybersecurity" aria-pressed="false">Cybersecurity</button>
+            <button type="button" class="service-catalog__filter" data-filter="business-systems" aria-pressed="false">Business Systems</button>
+          </div>
+          <label class="visually-hidden" for="service-catalog-search">Search services</label>
+          <input type="search" class="service-catalog__search" id="service-catalog-search" placeholder="Search services…" autocomplete="off">
+          <div class="service-catalog__list" id="service-catalog-list">
+            <article class="service-catalog-item" data-category="managed-it" data-keywords="managed it support help desk tickets dispatch escalation remote onsite troubleshooting">
+              <div class="service-catalog-item__header">
+                <div class="wf-placeholder service-catalog-item__logo" aria-hidden="true">Image</div>
+                <button type="button" class="service-catalog-item__trigger" aria-expanded="false" aria-controls="catalog-panel-managed-it-support" id="catalog-panel-managed-it-support-trigger">
+                  <div class="service-catalog-item__main">
+                    <div class="service-catalog-item__title">Managed IT Support</div>
+                    <span class="service-catalog-item__tag service-catalog-item__tag--managed-it">Managed IT</span>
+                  </div>
+                  <span class="service-catalog-item__toggle"><svg class="service-catalog-item__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </button>
+              </div>
+              <div class="service-catalog-item__panel" id="catalog-panel-managed-it-support" role="region" aria-labelledby="catalog-panel-managed-it-support-trigger">
+                <p>Day-to-day support through a clear ticketing, dispatch, and escalation model — so problems are tracked, prioritized, and resolved through accountable channels instead of workarounds. Fewer recurring issues and less downtime, with one dependable place to turn when staff need help, and ongoing care for the environment beyond the ticket in front of us.</p>
+              </div>
+            </article>
+            <article class="service-catalog-item" data-category="managed-it" data-keywords="network infrastructure servers firewall wifi switches documentation diagrams lifecycle">
+              <div class="service-catalog-item__header">
+                <div class="wf-placeholder service-catalog-item__logo" aria-hidden="true">Image</div>
+                <button type="button" class="service-catalog-item__trigger" aria-expanded="false" aria-controls="catalog-panel-network-infrastructure" id="catalog-panel-network-infrastructure-trigger">
+                  <div class="service-catalog-item__main">
+                    <div class="service-catalog-item__title">Network &amp; Infrastructure</div>
+                    <span class="service-catalog-item__tag service-catalog-item__tag--managed-it">Managed IT</span>
+                  </div>
+                  <span class="service-catalog-item__toggle"><svg class="service-catalog-item__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </button>
+              </div>
+              <div class="service-catalog-item__panel" id="catalog-panel-network-infrastructure" role="region" aria-labelledby="catalog-panel-network-infrastructure-trigger">
+                <p>Core systems documented and maintained to a standard — networks, servers, firewalls, Wi-Fi, and remote access configured to reduce exposure and surprise outages. An environment that is easier to support and explain, with replacement and growth planned around where the business is headed — not only the issue showing up today.</p>
+              </div>
+            </article>
+            <article class="service-catalog-item" data-category="managed-it" data-keywords="proactive maintenance monitoring patching updates alerts scheduled">
+              <div class="service-catalog-item__header">
+                <div class="wf-placeholder service-catalog-item__logo" aria-hidden="true">Image</div>
+                <button type="button" class="service-catalog-item__trigger" aria-expanded="false" aria-controls="catalog-panel-proactive-maintenance-monitoring" id="catalog-panel-proactive-maintenance-monitoring-trigger">
+                  <div class="service-catalog-item__main">
+                    <div class="service-catalog-item__title">Proactive Maintenance / Monitoring</div>
+                    <span class="service-catalog-item__tag service-catalog-item__tag--managed-it">Managed IT</span>
+                  </div>
+                  <span class="service-catalog-item__toggle"><svg class="service-catalog-item__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </button>
+              </div>
+              <div class="service-catalog-item__panel" id="catalog-panel-proactive-maintenance-monitoring" role="region" aria-labelledby="catalog-panel-proactive-maintenance-monitoring-trigger">
+                <p>Scheduled maintenance rhythms, monitoring, and alert response with clear ownership — patching and updates that catch risks early and prevent avoidable failures. Less emergency work and more confidence in day-to-day operations, without needing to follow every technical detail, with the environment looked after before you have to ask.</p>
+              </div>
+            </article>
+            <article class="service-catalog-item" data-category="managed-it" data-keywords="hardware procurement laptops workstations devices lifecycle warranty deployment">
+              <div class="service-catalog-item__header">
+                <div class="wf-placeholder service-catalog-item__logo" aria-hidden="true">Image</div>
+                <button type="button" class="service-catalog-item__trigger" aria-expanded="false" aria-controls="catalog-panel-hardware-procurement-shop" id="catalog-panel-hardware-procurement-shop-trigger">
+                  <div class="service-catalog-item__main">
+                    <div class="service-catalog-item__title">Hardware / Procurement / Shop</div>
+                    <span class="service-catalog-item__tag service-catalog-item__tag--managed-it">Managed IT</span>
+                  </div>
+                  <span class="service-catalog-item__toggle"><svg class="service-catalog-item__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </button>
+              </div>
+              <div class="service-catalog-item__panel" id="catalog-panel-hardware-procurement-shop" role="region" aria-labelledby="catalog-panel-hardware-procurement-shop-trigger">
+                <p>Standardized device selection, secure configuration before deployment, and lifecycle planning that reduces failures from unsupported or inconsistent equipment. A simpler buying and setup process for your team, with recommendations shaped by what fits the business — not what is easiest to sell.</p>
+              </div>
+            </article>
+            <article class="service-catalog-item" data-category="managed-it" data-keywords="executive advisory account management roadmap budget vCIO strategy planning">
+              <div class="service-catalog-item__header">
+                <div class="wf-placeholder service-catalog-item__logo" aria-hidden="true">Image</div>
+                <button type="button" class="service-catalog-item__trigger" aria-expanded="false" aria-controls="catalog-panel-executive-advisory-account-management" id="catalog-panel-executive-advisory-account-management-trigger">
+                  <div class="service-catalog-item__main">
+                    <div class="service-catalog-item__title">Executive Advisory / Account Management</div>
+                    <span class="service-catalog-item__tag service-catalog-item__tag--managed-it">Managed IT</span>
+                  </div>
+                  <span class="service-catalog-item__toggle"><svg class="service-catalog-item__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </button>
+              </div>
+              <div class="service-catalog-item__panel" id="catalog-panel-executive-advisory-account-management" role="region" aria-labelledby="catalog-panel-executive-advisory-account-management-trigger">
+                <p>Scattered priorities turned into a roadmap, budget, and clear next steps — including security, compliance, and lifecycle gaps surfaced before they become emergencies. Less reactive spending and aging-system surprises, with leadership getting a plain-language view of what matters, and a partner acting in your interest over time — not only when something breaks.</p>
+              </div>
+            </article>
+            <article class="service-catalog-item" data-category="cybersecurity" data-keywords="cybersecurity mfa edr email security patching monitoring incident response ransomware">
+              <div class="service-catalog-item__header">
+                <div class="wf-placeholder service-catalog-item__logo" aria-hidden="true">Image</div>
+                <button type="button" class="service-catalog-item__trigger" aria-expanded="false" aria-controls="catalog-panel-cybersecurity-services" id="catalog-panel-cybersecurity-services-trigger">
+                  <div class="service-catalog-item__main">
+                    <div class="service-catalog-item__title">Cybersecurity Services</div>
+                    <span class="service-catalog-item__tag service-catalog-item__tag--cybersecurity">Cybersecurity</span>
+                  </div>
+                  <span class="service-catalog-item__toggle"><svg class="service-catalog-item__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </button>
+              </div>
+              <div class="service-catalog-item__panel" id="catalog-panel-cybersecurity-services" role="region" aria-labelledby="catalog-panel-cybersecurity-services-trigger">
+                <p>A defined security framework — MFA, endpoint protection, email security, patching, monitoring, and incident response — instead of a pile of disconnected tools. Less disruption from compromise and data loss, cyber risk translated into priorities you can act on, and protection for your operations, reputation, and long-term resilience.</p>
+              </div>
+            </article>
+            <article class="service-catalog-item" data-category="cybersecurity" data-keywords="backup disaster recovery bdr ransomware restore test recovery data protection">
+              <div class="service-catalog-item__header">
+                <div class="wf-placeholder service-catalog-item__logo" aria-hidden="true">Image</div>
+                <button type="button" class="service-catalog-item__trigger" aria-expanded="false" aria-controls="catalog-panel-backup-disaster-recovery" id="catalog-panel-backup-disaster-recovery-trigger">
+                  <div class="service-catalog-item__main">
+                    <div class="service-catalog-item__title">Backup &amp; Disaster Recovery</div>
+                    <span class="service-catalog-item__tag service-catalog-item__tag--cybersecurity">Cybersecurity</span>
+                  </div>
+                  <span class="service-catalog-item__toggle"><svg class="service-catalog-item__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </button>
+              </div>
+              <div class="service-catalog-item__panel" id="catalog-panel-backup-disaster-recovery" role="region" aria-labelledby="catalog-panel-backup-disaster-recovery-trigger">
+                <p>Clear scope for what is backed up, how often, where it lives, and how recovery is tested — protecting against data loss, ransomware, hardware failure, and human error. A business that stays recoverable when something goes wrong, recovery plans leadership can understand, and verification so you are not assuming protection you do not actually have.</p>
+              </div>
+            </article>
+            <article class="service-catalog-item" data-category="business-systems" data-keywords="microsoft 365 m365 cloud licensing email teams sharepoint collaboration identity">
+              <div class="service-catalog-item__header">
+                <div class="wf-placeholder service-catalog-item__logo" aria-hidden="true">Image</div>
+                <button type="button" class="service-catalog-item__trigger" aria-expanded="false" aria-controls="catalog-panel-microsoft-365-cloud-services" id="catalog-panel-microsoft-365-cloud-services-trigger">
+                  <div class="service-catalog-item__main">
+                    <div class="service-catalog-item__title">Microsoft 365 / Cloud Services</div>
+                    <span class="service-catalog-item__tag service-catalog-item__tag--business-systems">Business Systems</span>
+                  </div>
+                  <span class="service-catalog-item__toggle"><svg class="service-catalog-item__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </button>
+              </div>
+              <div class="service-catalog-item__panel" id="catalog-panel-microsoft-365-cloud-services" role="region" aria-labelledby="catalog-panel-microsoft-365-cloud-services-trigger">
+                <p>Users, licensing, permissions, email, files, and collaboration organized and secured — identity, sharing, and retention under control, with reliable access to the tools staff depend on every day. Practical guidance so the platforms you already pay for are configured and used the way your business needs.</p>
+              </div>
+            </article>
+            <article class="service-catalog-item" data-category="business-systems" data-keywords="erp crm automation ai workflows integration business systems implementation">
+              <div class="service-catalog-item__header">
+                <div class="wf-placeholder service-catalog-item__logo" aria-hidden="true">Image</div>
+                <button type="button" class="service-catalog-item__trigger" aria-expanded="false" aria-controls="catalog-panel-erp-crm-ai-automation-implementation" id="catalog-panel-erp-crm-ai-automation-implementation-trigger">
+                  <div class="service-catalog-item__main">
+                    <div class="service-catalog-item__title">ERP / CRM / AI / Automation Implementation</div>
+                    <span class="service-catalog-item__tag service-catalog-item__tag--business-systems">Business Systems</span>
+                  </div>
+                  <span class="service-catalog-item__toggle"><svg class="service-catalog-item__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </button>
+              </div>
+              <div class="service-catalog-item__panel" id="catalog-panel-erp-crm-ai-automation-implementation" role="region" aria-labelledby="catalog-panel-erp-crm-ai-automation-implementation-trigger">
+                <p>Business systems, workflows, and data structured with proper access, controls, and governance from implementation onward. Less dependence on spreadsheets and tribal knowledge, processes staff and leadership can run with confidence, and modernization that builds durable value instead of adding complexity.</p>
+              </div>
+            </article>
+            <article class="service-catalog-item" data-category="business-systems" data-keywords="projects migrations server cloud infrastructure implementation rollout">
+              <div class="service-catalog-item__header">
+                <div class="wf-placeholder service-catalog-item__logo" aria-hidden="true">Image</div>
+                <button type="button" class="service-catalog-item__trigger" aria-expanded="false" aria-controls="catalog-panel-projects-migrations" id="catalog-panel-projects-migrations-trigger">
+                  <div class="service-catalog-item__main">
+                    <div class="service-catalog-item__title">Projects / Migrations</div>
+                    <span class="service-catalog-item__tag service-catalog-item__tag--business-systems">Business Systems</span>
+                  </div>
+                  <span class="service-catalog-item__toggle"><svg class="service-catalog-item__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </button>
+              </div>
+              <div class="service-catalog-item__panel" id="catalog-panel-projects-migrations" role="region" aria-labelledby="catalog-panel-projects-migrations-trigger">
+                <p>Major changes delivered with scope, documentation, and secure transitions across systems, servers, cloud, and networks — reducing disruption while the business keeps moving. A clear path through migrations and upgrades, fewer surprises along the way, and ownership from planning through handoff back to steady-state support.</p>
+              </div>
+            </article>
+          </div>
+          <p class="service-catalog__empty" id="service-catalog-empty" role="status">No services match your search or filter.</p>
         </div>
       </div>
     </section>
@@ -349,6 +478,65 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') document.querySelectorAll('.has-dropdown.open').forEach(o => { o.classList.remove('open'); o.querySelector('[aria-haspopup]')?.setAttribute('aria-expanded', 'false'); });
     });
+
+    (function () {
+      const catalog = document.getElementById('service-catalog');
+      if (!catalog) return;
+
+      const items = [...catalog.querySelectorAll('.service-catalog-item')];
+      const filters = [...catalog.querySelectorAll('.service-catalog__filter')];
+      const searchInput = document.getElementById('service-catalog-search');
+      const emptyState = document.getElementById('service-catalog-empty');
+      let activeFilter = null;
+
+      const itemSearchText = (item) => {
+        const title = item.querySelector('.service-catalog-item__title')?.textContent ?? '';
+        const description = item.querySelector('.service-catalog-item__panel p')?.textContent ?? '';
+        const keywords = item.dataset.keywords ?? '';
+        return (title + ' ' + description + ' ' + keywords).toLowerCase();
+      };
+
+      const applyFilters = () => {
+        const query = (searchInput?.value ?? '').trim().toLowerCase();
+        let visibleCount = 0;
+
+        items.forEach((item) => {
+          const matchesCategory = !activeFilter || item.dataset.category === activeFilter;
+          const matchesSearch = !query || itemSearchText(item).includes(query);
+          const show = matchesCategory && matchesSearch;
+          item.classList.toggle('is-hidden', !show);
+          if (show) visibleCount++;
+        });
+
+        emptyState?.classList.toggle('is-visible', visibleCount === 0);
+      };
+
+      filters.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const filter = btn.dataset.filter;
+          if (activeFilter === filter) {
+            activeFilter = null;
+          } else {
+            activeFilter = filter;
+          }
+          filters.forEach((b) => b.setAttribute('aria-pressed', b.dataset.filter === activeFilter ? 'true' : 'false'));
+          applyFilters();
+        });
+      });
+
+      searchInput?.addEventListener('input', applyFilters);
+
+      items.forEach((item) => {
+        const trigger = item.querySelector('.service-catalog-item__trigger');
+        const panel = item.querySelector('.service-catalog-item__panel');
+        if (!trigger || !panel) return;
+
+        trigger.addEventListener('click', () => {
+          const isOpen = item.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      });
+    })();
   </script>
 </body>
 </html>

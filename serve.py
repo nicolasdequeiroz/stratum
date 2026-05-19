@@ -5,7 +5,7 @@ Local dev server for the Stratum static site.
 Behaves like `python3 -m http.server` but additionally:
 - If the requested path doesn't match a file, tries appending `.html`.
 
-This mirrors the production rewrite where /about → about.html,
+This mirrors production clean URLs: /about → about/index.html,
 /services/managed-it → services/managed-it.html, etc.
 
 Usage: python3 serve.py [port]   (default port: 8000)
@@ -23,6 +23,9 @@ class HTMLFallbackHandler(SimpleHTTPRequestHandler):
             html_candidate = local + ".html"
             if os.path.isfile(html_candidate):
                 return html_candidate
+            index_candidate = os.path.join(local, "index.html")
+            if os.path.isfile(index_candidate):
+                return index_candidate
         return local
 
     def send_error(self, code, message=None, explain=None):
