@@ -1625,6 +1625,24 @@ p  { color: var(--color-text-muted); max-width: 60ch; }
 .section-header--left h2 { width: auto; }
 .section-header--left .wf-label { margin: 0 0 10px; }
 
+/* Centered “see overview” link below a section (overrides p { max-width: 60ch }) */
+.section-overview-link {
+  max-width: none;
+  width: 100%;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.section-overview-link--spaced {
+  margin-top: 32px;
+}
+
+.section-overview-link a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
 /* ── Inline CTA (smaller than CTA band) ── */
 .inline-cta {
   background: var(--color-surface);
