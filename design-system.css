@@ -305,9 +305,10 @@ p  { color: var(--color-text-muted); max-width: 60ch; }
   top: 64px;
   left: 0;
   right: 0;
-  background: var(--color-white);
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 8px 24px rgba(0,0,0,.07);
+  box-shadow: 0 16px 32px -12px rgba(0,0,0,.10);
   z-index: 200;
   animation: dropdownIn .15s ease;
 }
@@ -317,19 +318,27 @@ p  { color: var(--color-text-muted); max-width: 60ch; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* Open via keyboard focus-within or .open class (JS adds .open on hover with close delay) */
+.has-dropdown:focus-within .nav-dropdown,
 .has-dropdown.open .nav-dropdown {
   display: block;
 }
 
-    .nav-dropdown-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--color-border);
-      align-items: stretch;
-    }
+.has-dropdown:focus-within > a .chevron,
+.has-dropdown.open > a .chevron {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.nav-dropdown-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 20px 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  align-items: stretch;
+}
 
 .nav-dropdown-item {
   display: flex;
@@ -437,13 +446,19 @@ p  { color: var(--color-text-muted); max-width: 60ch; }
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 24px 26px;
+  padding: 20px 22px;
   background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
   text-decoration: none;
-  transition: background .12s;
+  transition: background .12s, border-color .12s, transform .12s;
 }
 
-.nav-dropdown-card:hover { background: var(--color-accent-lt); }
+.nav-dropdown-card:hover {
+  background: var(--color-white);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+}
 
 .nav-dropdown-card-num {
   display: block;
@@ -492,19 +507,25 @@ p  { color: var(--color-text-muted); max-width: 60ch; }
 /* ── Industry items (equal 5-column layout) ── */
 .nav-dropdown-inner--industries {
   grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
 }
 
 .nav-dropdown-industry {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 22px 20px;
+  padding: 16px 14px;
   background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
   text-decoration: none;
-  transition: background .12s;
+  transition: background .12s, border-color .12s, transform .12s;
 }
 
-.nav-dropdown-industry:hover { background: var(--color-accent-lt); }
+.nav-dropdown-industry:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+}
 
 .nav-dropdown-industry-icon {
   width: 32px;
