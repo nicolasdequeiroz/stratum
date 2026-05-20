@@ -1,8 +1,8 @@
 /**
  * GitHub Pages project sites are served under /repo-name/.
- * Root-absolute paths (/design-system.css, /about) break on *.github.io/user/repo
- * but stay correct on a custom domain at /. This script rewrites those paths only
- * on github.io hosts.
+ * Root-absolute paths (/about, /services) break on *.github.io/user/repo
+ * but stay correct on a custom domain at /. Stylesheets use relative paths in HTML;
+ * this script only rewrites remaining root-absolute links on github.io.
  */
 (function () {
   'use strict';
@@ -13,10 +13,10 @@
     if (seg) base = '/' + seg;
   }
 
-  window.__STRATUM_BASE = base;
+  if (!base) return;
 
   function abs(path) {
-    if (!base || !path || path.charAt(0) !== '/' || path.indexOf('//') === 0) return path;
+    if (!path || path.charAt(0) !== '/' || path.indexOf('//') === 0) return path;
     return base + path;
   }
 
@@ -24,9 +24,6 @@
     var val = el.getAttribute(attr);
     if (val) el.setAttribute(attr, abs(val));
   }
-
-  /* Inject stylesheet with correct base before parser sees a broken /design-system.css */
-  document.write('<link rel="stylesheet" href="' + base + '/design-system.css">');
 
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('a[href^="/"], link[href^="/"], script[src^="/"]').forEach(function (el) {
